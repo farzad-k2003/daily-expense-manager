@@ -1,0 +1,71 @@
+.settings {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Add type form */
+.add-type {
+    display: flex;
+    gap: 8px;
+}
+
+.add-type input[type="text"],
+.add-type input[type="color"] {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 8px;
+    height: 35px;
+}
+
+.add-type button {
+    background: var(--accent);
+    color: black;
+    border: none;
+    padding: 8px 12px;
+}
+
+/* Types list */
+.type-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.type-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.type-list li:last-child {
+    border-bottom: none;
+}
+
+.type-list .color {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+}
+
+.type-list .name {
+    flex: 1;
+}
+
+.type-list button {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 18px;
+}
+
+.type-list button:hover {
+    color: #ff5c5c;
+}

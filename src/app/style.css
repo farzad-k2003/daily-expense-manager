@@ -1,0 +1,55 @@
+:root {
+    --bg: #0b0b0b;
+    --surface: #141414;
+    --border: #222;
+    --text: #eaeaea;
+    --muted: #9a9a9a;
+    --accent: #4f8cff;
+    direction: rtl;
+}
+
+* {
+    letter-spacing: normal;
+}
+
+input,
+select,
+button,
+div,
+textarea {
+    font-family: inherit;
+    direction: rtl;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Vazirmatn", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    direction: rtl;
+}
+
+
+@font-face {
+    font-family: "Vazirmatn";
+    src: url("../assets/fonts/Vazirmatn-Regular.ttf") format("ttf");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Vazirmatn";
+    src: url("../assets/fonts/Vazirmatn-Medium.ttf") format("ttf");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Vazirmatn";
+    src: url("../assets/fonts/Vazirmatn-Bold.ttf") format("ttf");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}

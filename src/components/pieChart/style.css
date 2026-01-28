@@ -1,0 +1,24 @@
+.pie-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 24px 0;
+}
+
+.pie-label {
+    fill: var(--text);
+    font-size: 12px;
+    pointer-events: none;
+}
+
+.pie-tooltip {
+    position: absolute;
+    bottom: -12px;
+    transform: translateY(100%);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 12px;
+    text-align: center;
+    min-width: 140px;
+}

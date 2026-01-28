@@ -1,0 +1,14 @@
+.expense-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+input,
+select,
+button {
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 8px;
+}
