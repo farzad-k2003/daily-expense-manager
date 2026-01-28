@@ -10,23 +10,29 @@ export function Monthly() {
   return (
     <>
       <h2>ماه اخیر</h2>
-      <PieChart data={pieData} />
+      {pieData.length ? (
+        <>
+          <PieChart data={pieData} />
 
-      <ul className="expense-list">
-        {pieData.map(({ color, label, value }) => {
-          return (
-            <li key={label} className="expense-item">
-              <span className="dot" style={{ background: color }} />
+          <ul className="expense-list">
+            {pieData.map(({ color, label, value }) => {
+              return (
+                <li key={label} className="expense-item">
+                  <span className="dot" style={{ background: color }} />
 
-              <div className="info">
-                <span className="type">{label || "Unknown"}</span>
-              </div>
+                  <div className="info">
+                    <span className="type">{label || "Unknown"}</span>
+                  </div>
 
-              <span className="amount">{value.toLocaleString()}</span>
-            </li>
-          );
-        })}
-      </ul>
+                  <span className="amount">{value.toLocaleString()}</span>
+                </li>
+              );
+            })}
+          </ul>
+        </>
+      ) : (
+        <p>موردی برای نمایش وجود ندارد</p>
+      )}
     </>
   );
 }
