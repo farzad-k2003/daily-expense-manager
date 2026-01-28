@@ -1,75 +1,41 @@
-# React + TypeScript + Vite
+<div dir="ltr">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 💰 مدیریت هزینه‌های روزانه
 
-Currently, two official plugins are available:
+یک وب‌اپلیکیشن ساده و سبک برای **مدیریت هزینه‌های شخصی** که با **React، TypeScript و Vite** ساخته شده است.  
+این برنامه به شما کمک می‌کند هزینه‌های روزانه خود را ثبت، دسته‌بندی و تحلیل کنید — بدون نیاز به بک‌اند.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📌 تمام داده‌ها با استفاده از **LocalStorage** در مرورگر ذخیره می‌شوند؛ سریع، امن و مناسب برای استفاده شخصی.
 
-## React Compiler
+---
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## 🚀 امکانات
 
-Note: This will impact Vite dev & build performances.
+- ✅ افزودن و مشاهده هزینه‌های روزانه  
+- ✅ دسته‌بندی هزینه‌ها بر اساس نوع  
+- ✅ ذخیره‌سازی دائمی اطلاعات با **LocalStorage**  
+- ✅ نمایش گرافیکی توزیع هزینه‌ها با **نمودار دایره‌ای (Pie Chart)**  
+- ✅ رابط کاربری ریسپانسیو (Mobile-first)  
+- ✅ طراحی ساده با تم تیره  
+- ✅ بدون استفاده از کتابخانه‌های نموداری خارجی  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🧱 تکنولوژی‌های استفاده‌شده
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- React (کامپوننت‌های فانکشنال و هوک‌ها)
+- TypeScript (افزایش ایمنی و خوانایی کد)
+- Vite (سرعت بالا در توسعه و بیلد)
+- CSS (استایل‌دهی مستقل برای کامپوننت‌ها)
+- SVG (برای پیاده‌سازی نمودار دایره‌ای)
+- LocalStorage (ذخیره داده در سمت کلاینت)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📦 نصب و راه‌اندازی
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+ابتدا مخزن را کلون کنید:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```bash
+git clone git@github.com:farzad-k2003/daily-expense-manager.git
+cd daily-expense-manager
