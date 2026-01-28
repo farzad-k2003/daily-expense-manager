@@ -1,11 +1,13 @@
 {
   "name": "daily-expense-manager",
+  "homepage": "https://farzad-k2003.github.io/daily-expense-manager",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite --open",
     "build": "tsc -b && vite build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },
