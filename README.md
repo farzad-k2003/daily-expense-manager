@@ -23,19 +23,9 @@
 
 ## 🧱 تکنولوژی‌های استفاده‌شده
 
-- React (کامپوننت‌های فانکشنال و هوک‌ها)
-- TypeScript (افزایش ایمنی و خوانایی کد)
-- Vite (سرعت بالا در توسعه و بیلد)
-- CSS (استایل‌دهی مستقل برای کامپوننت‌ها)
-- SVG (برای پیاده‌سازی نمودار دایره‌ای)
-- LocalStorage (ذخیره داده در سمت کلاینت)
-
----
-
-## 📦 نصب و راه‌اندازی
-
-ابتدا مخزن را کلون کنید:
-
-```bash
-git clone git@github.com:farzad-k2003/daily-expense-manager.git
-cd daily-expense-manager
+- React (Functional components and hooks)
+- TypeScript (Improved type safety and code readability)
+- Vite (Fast development server and build tool)
+- CSS (Component-scoped styling)
+- SVG (Used for implementing the pie chart)
+- LocalStorage (Client-side data persistence)
