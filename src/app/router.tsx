@@ -3,12 +3,12 @@ import { Layout } from "../components";
 import { Dashboard, Monthly, Settings } from "../pages";
 
 export const router = createBrowserRouter([
-    {
-        element: <Layout />,
-        children: [
-            { path: "/", element: <Dashboard /> },
-            { path: "/monthly", element: <Monthly /> },
-            { path: "/settings", element: <Settings /> },
-        ],
-    },
+  {
+    element: <Layout />,
+    children: [
+      { path: "/daily-expense-manager/", element: <Dashboard /> },
+      { path: "/daily-expense-manager/monthly", element: <Monthly /> },
+      { path: "/daily-expense-manager/settings", element: <Settings /> },
+    ],
+  },
 ]);
