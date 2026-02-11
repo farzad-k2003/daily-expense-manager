@@ -31,8 +31,19 @@ export function PieChart({
 
   return (
     <div className="pie-wrapper">
-      <svg width={size} height={size}>
+      <svg
+        width={size}
+        height={size}
+        role="img"
+        aria-labelledby="chart-title chart-desc"
+      >
+        <title id="chart-title">Expense distribution</title>
+        <desc id="chart-desc">
+          Pie chart showing expense breakdown by category.
+        </desc>
+
         {data.map((slice, i) => {
+          const percentage = Math.round((slice.value / total) * 100);
           const isFullCircle = data.length === 1 || slice.value === total;
 
           if (isFullCircle) {
@@ -44,12 +55,17 @@ export function PieChart({
                 r={radius}
                 fill={slice.color}
                 opacity={active === i || active === null ? 1 : 0.5}
+                tabIndex={0}
+                role="button"
+                aria-label={`${slice.label}: ${slice.value} (${percentage}%)`}
+                onFocus={() => setActive(i)}
+                onBlur={() => setActive(null)}
                 onMouseEnter={() => setActive(i)}
                 onMouseLeave={() => setActive(null)}
-                onTouchStart={() => setActive(i)}
               />
             );
           }
+
           const startAngle = (cumulative / total) * 2 * Math.PI;
           const sliceAngle = (slice.value / total) * 2 * Math.PI;
           cumulative += slice.value;
@@ -68,18 +84,19 @@ export function PieChart({
           `;
 
           return (
-            <g
+            <path
               key={i}
+              d={d}
+              fill={slice.color}
+              opacity={active === i || active === null ? 1 : 0.5}
+              tabIndex={0}
+              role="button"
+              aria-label={`${slice.label}: ${slice.value} (${percentage}%)`}
+              onFocus={() => setActive(i)}
+              onBlur={() => setActive(null)}
               onMouseEnter={() => setActive(i)}
               onMouseLeave={() => setActive(null)}
-              onTouchStart={() => setActive(i)}
-            >
-              <path
-                d={d}
-                fill={slice.color}
-                opacity={active === i || active === null ? 1 : 0.5}
-              />
-            </g>
+            />
           );
         })}
       </svg>
@@ -93,6 +110,15 @@ export function PieChart({
           </div>
         </div>
       )}
+
+      <ul className="sr-only">
+        {data.map((slice, i) => (
+          <li key={i}>
+            {slice.label}: {slice.value.toLocaleString()} (
+            {Math.round((slice.value / total) * 100)}%)
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
