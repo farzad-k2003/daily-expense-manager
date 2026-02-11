@@ -1,11 +1,28 @@
+import { useEffect, useState } from "react";
 import { PieChart } from "../../components";
-import { storage } from "../../storage";
+import { EXPENSES_LS_KEY, storage } from "../../storage";
 import { groupByType } from "../../utils";
 
 export function Monthly() {
-  const expenses = storage.getExpenses();
+  const [expenses, setExpenses] = useState(storage.getExpenses());
   const types = storage.getTypes();
   const pieData = groupByType(expenses, types);
+
+  useEffect(() => {
+    function handleStorageChange(e: StorageEvent) {
+      console.log({ e });
+      if (e.key === EXPENSES_LS_KEY) {
+        const updated = storage.getExpenses();
+        setExpenses(updated);
+      }
+    }
+
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
 
   return (
     <>
